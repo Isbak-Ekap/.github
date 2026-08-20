@@ -113,11 +113,20 @@ flowchart TD
 
 ## Depolarımız
 
-| Depo | İçerik | Bağımlılık |
-|---|---|---|
-| **[`backend`](https://github.com/Isbak-Ekap/backend)** | .NET 10 API (5 katman), Python scraper, Airflow DAG'leri, proje dokümanları | PostgreSQL |
-| **[`frontend`](https://github.com/Isbak-Ekap/frontend)** | React 19 + TypeScript + Ant Design tek sayfa uygulaması (İhaleBak) | `backend` REST API'si |
-| **[`LLM`](https://github.com/Isbak-Ekap/LLM)** | Python LLM karar motoru (*EkapUnified*) — RAG + iki aşamalı karar zinciri | PostgreSQL (salt okuma) · Ollama · Qdrant |
+**[`backend`](https://github.com/Isbak-Ekap/backend) — API ve veri toplama**  
+Kamu ihalelerini EKAP ve ilan.gov.tr üzerinden toplayıp PostgreSQL'de saklayan, rol bazlı yetkilendirmeyle REST API olarak sunan 5 katmanlı .NET uygulaması. Veri toplama tarafı Python betikleriyle yürür, Airflow ile zamanlanır.  
+`.NET 10` · `ASP.NET Core Web API` · `EF Core` + `Npgsql` · `Identity` + `JWT` · `Python 3` · `Apache Airflow`  
+Bağımlılık: PostgreSQL
+
+**[`frontend`](https://github.com/Isbak-Ekap/frontend) — İhaleBak arayüzü**  
+İhale listesini filtreleyip önceliklendirilmiş biçimde gösteren, takip listesi ve yönetim ekranlarını barındıran tek sayfa uygulaması. Menü ve ekranlar kullanıcının yetkisine göre dinamik şekillenir.  
+`React 19` · `TypeScript 6` · `Vite 8` · `Ant Design 6` · `TanStack Query 5` · `React Router 7` · `Axios`  
+Bağımlılık: `backend` REST API'si
+
+**[`LLM`](https://github.com/Isbak-Ekap/LLM) — EkapUnified karar motoru**  
+İlan metnini temizleyip 20 iş paketi profiliyle RAG üzerinden eşleştiren, iki aşamalı karar zinciriyle ilgi skoru ve gerekçe üreten ayrı süreç. Modeller yerelde çalışır, veri kurum dışına çıkmaz.  
+`Python 3.14` · `Ollama (qwen3:4b/8b)` · `bge-m3` · `Qdrant` · `pydantic` · `pytest (88 test)`  
+Bağımlılık: PostgreSQL (salt okuma) · Ollama · Qdrant
 
 ## Öne Çıkan Özellikler
 
