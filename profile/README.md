@@ -24,11 +24,11 @@ Sistem ihaleleri otomatik toplar, yerelde çalışan bir dil modeliyle her ilan�
 
 ## Ölçülen Sonuç
 
-| Metrik | Sonuç |
-|---|---|
-| Kaçırma seti (uzman onaylı) | **30/30 — kaçırma 0** |
-| Yanlış alarm seti | 18/20 |
-| ~4.450 aktif ihalede aday oranı | **~%7** |
+| Metrik                          | Sonuç                 |
+| ------------------------------- | --------------------- |
+| Kaçırma seti (uzman onaylı)     | **30/30 — kaçırma 0** |
+| Yanlış alarm seti               | 18/20                 |
+| ~4.450 aktif ihalede aday oranı | **~%7**               |
 
 Modelin üstünde dört deterministik kural kapısı çalışır (skor/karar tutarlılığı, uydurma paket yakalama, belirsiz/reddet sınırı, retrieval eşiği) — her biri gerçek bir hata modundan doğdu ve testle korunuyor.
 
@@ -142,25 +142,26 @@ Bağımlılık: PostgreSQL (salt okuma) · Ollama · Qdrant
 
 ## Teknoloji Yığını
 
-| Katman | Teknoloji |
-|---|---|
-| Backend | .NET 10, ASP.NET Core Web API, EF Core (Npgsql), Identity + JWT, FluentValidation, AutoMapper, Swagger |
-| Frontend | React 19, TypeScript 6, Vite 8, Ant Design 6, TanStack Query 5, React Router 7, Axios |
-| Veri Toplama | Python 3, `httpx`, `psycopg2`, `pydantic`, `markitdown` |
-| LLM Karar Motoru | Python 3.14, Ollama (`qwen3:4b`/`8b` — yerel, veri kurum dışına çıkmaz), `bge-m3` + Qdrant, pytest (88 test) |
-| Veritabanı | PostgreSQL |
-| Orkestrasyon & DevOps | Apache Airflow (`DockerOperator`), Docker, Nginx, GitHub Actions → GHCR → self-hosted runner |
+| Katman                | Teknoloji                                                                                                    |
+| --------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Backend               | .NET 10, ASP.NET Core Web API, EF Core (Npgsql), Identity + JWT, FluentValidation, AutoMapper, Swagger       |
+| Frontend              | React 19, TypeScript 6, Vite 8, Ant Design 6, TanStack Query 5, React Router 7, Axios                        |
+| Veri Toplama          | Python 3, `httpx`, `psycopg2`, `pydantic`, `markitdown`                                                      |
+| LLM Karar Motoru      | Python 3.14, Ollama (`qwen3:4b`/`8b` — yerel, veri kurum dışına çıkmaz), `bge-m3` + Qdrant, pytest (88 test) |
+| Veritabanı            | PostgreSQL                                                                                                   |
+| Orkestrasyon & DevOps | Apache Airflow (`DockerOperator`), Docker, Nginx, GitHub Actions → GHCR → self-hosted runner                 |
 
 ## Geliştirici Ekibi
 
 Bu proje İSBAK bünyesinde staj kapsamında geliştirilmektedir.
 
-| İsim Soyisim | E-posta |
-|---|---|
-| **Metin Eren Uzun** | [metineren0061@gmail.com](mailto:metineren0061@gmail.com) |
-| Mert Evran | [mertevran1907@gmail.com](mailto:mertevran1907@gmail.com) |
-| Kerem Ünal | [kerem.unal2004@gmail.com](mailto:kerem.unal2004@gmail.com) |
-| Özlem Demir | [demirezlem@gmail.com](mailto:demirezlem@gmail.com) |
-| Hayrunnisa Yılmaz | [hayrunnisa0830@gmail.com](mailto:hayrunnisa0830@gmail.com) |
-| Ahmet Bağbakan | [ahmet.bagbakan@hotmail.com](mailto:ahmet.bagbakan@hotmail.com) |
-| Atalay Karakaya | [atalaykarakaya105@gmail.com](mailto:atalaykarakaya105@gmail.com) |
+| İsim Soyisim        | E-posta                                                           |
+| ------------------- | ----------------------------------------------------------------- |
+| **Metin Eren Uzun** | [metineren0061@gmail.com](mailto:metineren0061@gmail.com)         |
+| Mert Evran          | [mertevran1907@gmail.com](mailto:mertevran1907@gmail.com)         |
+| Mustafa İnce        | [mustafancee.52@gmail.com](mailto:mustafancee.52@gmail.com)       |
+| Kerem Ünal          | [kerem.unal2004@gmail.com](mailto:kerem.unal2004@gmail.com)       |
+| Özlem Demir         | [demirezlem@gmail.com](mailto:demirezlem@gmail.com)               |
+| Hayrunnisa Yılmaz   | [hayrunnisa0830@gmail.com](mailto:hayrunnisa0830@gmail.com)       |
+| Ahmet Bağbakan      | [ahmet.bagbakan@hotmail.com](mailto:ahmet.bagbakan@hotmail.com)   |
+| Atalay Karakaya     | [atalaykarakaya105@gmail.com](mailto:atalaykarakaya105@gmail.com) |
